@@ -1,3 +1,6 @@
+-- Реализовать триггер такой, что при вводе строки в таблице аудит, если общие затраты не
+-- указаны, то они вычисляются
+
 ALTER TABLE audit
     ALTER COLUMN total_resource_cost DROP NOT NULL;
 

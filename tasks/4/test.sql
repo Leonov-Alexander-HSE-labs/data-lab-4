@@ -17,6 +17,8 @@ VALUES (101, 'Monday', 101, 101, 101, 10);
 
 SELECT total_resource_cost = 55 FROM audit_view WHERE task_name = 'Task1'; ---true
 
+---task.overhead_percentage == 0 => audit.total_resource_cost == 50
+---it calculated by task.update_overhead_trigger
 UPDATE tasks SET overhead_percentage = 0 WHERE id = 101;
 SELECT total_resource_cost = 50 FROM audit_view WHERE task_name = 'Task1'; ---true
 
